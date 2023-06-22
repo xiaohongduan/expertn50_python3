@@ -1,0 +1,121 @@
+[control]
+output = XPN_OUTPUT
+pedotransfer = Campbell
+balance = BALANCE
+database = Expert N Standard Read INI
+
+[water]
+flow module = HYDRUS Flow
+hydraulic functions = van Genuchten and Mualem
+potential evapotranspiration = Penman Monteith
+potential evaporation = Penman Monteith
+actual evaporation = Penman Monteith
+kc factor = ET0xLAI3rd
+
+[Expert N Standard Read INI]
+use high resolution climate data = 1
+interpolate climate data = 1
+filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_cfg.ini$>
+high res climate file = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_climate_hr.csv$>
+time zone = 0
+
+
+[expertn_database]
+
+[HYDRUS Flow]
+
+[hydrus]
+bottombc = 1
+mobil = 0
+infiltration_limit = 1
+infiltration_layer_limit = 1
+
+[Penman Monteith]
+soil cover = 0.0
+
+[evapotranspiration_pm]
+
+[First Soil Layer]
+
+[daisy]
+
+[heat]
+latent heat = Penman Monteith
+sensible heat = Penman Monteith
+ground heat = Penman Monteith
+net radiation = Penman Monteith
+emissivity = Penman Monteith
+heat transfer = DAISY Modul Heat Transfer
+albedo = Albedo const
+surface temperature = First Soil Layer
+
+[DAISY Modul Heat Transfer]
+frost_rad_flag = 1
+lower_boundary_condition = 2
+
+[plant]
+
+[Xylem water flow]
+
+[xylemwaterflow]
+cfg_filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_xylemwaterflow.ini$>
+canopy_filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_xylemwaterflow_canopy.tlp$>
+root_filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_xylemwaterflow_root.tlp$>
+tlp_output = 2
+
+[LEACHN]
+
+[leachn]
+ini_filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_leachn.ini$>
+lai = 1.0
+nroot = 10
+distribution = 0
+plant_measurement_filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_leachn_plant_measurement.xno$>
+bottombc = 1
+mobil = 0
+
+[nitrogen]
+nitrogen transport = LEACHN
+deposition = Constant Deposition
+mineralisation = CENTURY_N Mineralisation
+nitrification = CENTURY_N Nitrification
+denitrification = CENTURY_N Denitrification
+
+[Albedo const]
+albedo = 0.25
+
+[Constant Deposition]
+no3 = 6.0
+nh4 = 12.0
+
+[depos]
+
+[CENTURY_N Mineralisation]
+
+[century_n]
+ini_filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_century_n.ini$>
+iforest = 0
+fdrain = 1.0
+
+[dev stage]
+kc_param_file = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_kc_dev_stage.ini$>
+
+[doc]
+description = Treemix aus
+
+[TREEMIX]
+
+[treemix]
+ini_filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_treemix.ini$>
+
+[TREEMIX (incl. Rutter Model)]
+
+[ET0xLAI3rd]
+
+[Schaaf]
+
+[schaaf]
+filename = $<$PROJECT_PATH/$PROJECT_NAME_$REG_STR_fertilization.ini$>
+
+[management]
+irrigation = Schaaf

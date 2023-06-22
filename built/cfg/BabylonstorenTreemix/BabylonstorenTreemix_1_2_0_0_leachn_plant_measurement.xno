@@ -1,0 +1,3 @@
+Time and Date,Development Stage (fDevStage),Plant Height [cm] (fHeight*10),Leaf Area Index (fLAI), Leaf Number (iLeafNum),Plant Numbers (fTillers),Dry Mass Lea (fLeafWeight),Dry Mass Stem (fStemWeight),Grain Mass (fGrainWeight),Above Biomass (fAboveBiomass),N Concentration Leaf (fNConcLeaf), N Concentration Stem (fNConcStem), N Concentration Crop (fNConcCrop), N Concentration Above Biomass (fNConcAbvBiomass),Rooting Depth [cm] (fRootDepth),Root Mass (fRootWeight), N Dry Root Concentration (fNConcDryRoot),Crop Cover Factor (fCropCoverFrac)
+2015-07-15 00:00:00,65,0.0,2.98,0.0,0.0,0,0,0,0,0,0,0,0,60,1000.0,0.24,0
+2015-10-03 00:00:00,92,0.0,0.5,0.0,0.0,0,0,0,0,0,0,0,0,60,1000.0,0.24,0

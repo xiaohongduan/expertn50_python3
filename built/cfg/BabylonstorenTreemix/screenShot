@@ -1,0 +1,66 @@
+hong@hong-ThinkPad-X1-Carbon-7th:~/expertn50/built/bin$ valgrind --log-file=valgrind-out.txt --leak-check=full --track-origins=yes --verbose ./expertn_bin --base-dir=$XPN_PATH/built --config-file=$XPN_PATH/built/cfg/BabylonstorenTreemix/BabylonstorenTreemix.xpn
+1_1_0_0: Init!
+1_1_1_0: Init!
+1_2_0_0: Init!
+1_2_1_0: Init!
+Simulation Day : 2015-02-12
+1_1_0_0: 2015-2-12: Irrigation: 7.00 l
+1_1_1_0: 2015-2-12: Irrigation: 7.00 l
+1_2_0_0: 2015-2-12: Irrigation: 7.00 l
+1_2_1_0: 2015-2-12: Irrigation: 7.00 l
+<TXTOUTPUT: '/home/hong/expertn50/built/cfg/BabylonstorenTreemix/output/BabylonstorenTreemix_1_1_0_0.xno'>
+<TXTOUTPUT: '/home/hong/expertn50/built/cfg/BabylonstorenTreemix/output/BabylonstorenTreemix_1_2_0_0.xno'>
+<TXTOUTPUT: '/home/hong/expertn50/built/cfg/BabylonstorenTreemix/output/BabylonstorenTreemix_1_2_1_0.xno'>
+<TXTOUTPUT: '/home/hong/expertn50/built/cfg/BabylonstorenTreemix/output/BabylonstorenTreemix_1_1_1_0.xno'>
+Simulation Day : 2015-02-13
+1_1_0_0: 2015-2-13: Irrigation: 7.00 l
+1_2_0_0: 2015-2-13: Irrigation: 7.00 l
+1_2_1_0: 2015-2-13: Irrigation: 7.00 l
+1_1_1_0: 2015-2-13: Irrigation: 7.00 l
+Simulation Day : 2015-02-14
+1_2_0_0: 2015-2-14: Irrigation: 7.00 l
+1_1_0_0: 2015-2-14: Irrigation: 7.00 l
+1_2_1_0: 2015-2-14: Irrigation: 7.00 l
+1_1_1_0: 2015-2-14: Irrigation: 7.00 l
+Simulation Day : 2015-02-15
+1_2_0_0: 2015-2-15: Irrigation: 7.00 l
+1_1_0_0: 2015-2-15: Irrigation: 7.00 l
+1_2_1_0: 2015-2-15: Irrigation: 7.00 l
+1_1_1_0: 2015-2-15: Irrigation: 7.00 l
+Simulation Day : 2015-02-16
+1_2_0_0: 2015-2-16: Irrigation: 7.00 l
+1_2_1_0: 2015-2-16: Irrigation: 7.00 l
+1_1_1_0: 2015-2-16: Irrigation: 7.00 l
+1_1_0_0: 2015-2-16: Irrigation: 7.00 l
+Simulation Day : 2015-02-17
+1_2_0_0: 2015-2-17: Irrigation: 7.00 l
+1_1_0_0: 2015-2-17: Irrigation: 7.00 l
+1_2_1_0: 2015-2-17: Irrigation: 7.00 l
+1_1_1_0: 2015-2-17: Irrigation: 7.00 l
+Simulation Day : 2015-02-18
+1_2_0_0: 2015-2-18: Irrigation: 7.00 l
+1_2_1_0: 2015-2-18: Irrigation: 7.00 l
+1_1_0_0: 2015-2-18: Irrigation: 7.00 l
+1_1_1_0: 2015-2-18: Irrigation: 7.00 l
+Simulation Day : 2015-02-19
+1_2_0_0: 2015-2-19: Irrigation: 7.00 l
+1_1_1_0: 2015-2-19: Irrigation: 7.00 l
+1_2_1_0: 2015-2-19: Irrigation: 7.00 l
+1_1_0_0: 2015-2-19: Irrigation: 7.00 l
+Simulation Day : 2015-02-20
+1_1_0_0: 2015-2-20: Irrigation: 7.00 l
+1_2_0_0: 2015-2-20: Irrigation: 7.00 l
+1_2_1_0: 2015-2-20: Irrigation: 7.00 l
+1_1_1_0: 2015-2-20: Irrigation: 7.00 l
+Simulation Day : 2015-02-21
+1_2_0_0: 2015-2-21: Irrigation: 7.00 l
+1_1_0_0: 2015-2-21: Irrigation: 7.00 l
+1_2_1_0: 2015-2-21: Irrigation: 7.00 l
+1_1_1_0: 2015-2-21: Irrigation: 7.00 l
+Simulation Day : 2015-02-22
+1_1_0_0: Finalize!
+1 
+1_1_1_0: Finalize!
+1 
+1_2_0_0: Finalize!
+1_2_1_0: Finalize!

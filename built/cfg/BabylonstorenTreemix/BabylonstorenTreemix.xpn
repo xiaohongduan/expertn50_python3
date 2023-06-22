@@ -1,0 +1,21 @@
+[modul]
+libs = mpmas_coupling;gecros;pollen;xpn_output;wrfchem_coupling;ceres;wrf_coupling;xnoah;treemix;spass;schaaf;read_wrf_weather;leachn;interception;pedotransfer;hpm;hydrus;hydraulic_functions;evapotranspiration_pm;depos;daisy;century_n;balance;expertn_database;xylemwaterflow;
+
+[model]
+grid = 1,1,1,0,$PROJECT_PATH/BabylonstorenTreemix_1_1_0_0.xpi,100.0;1,1,1,1,$PROJECT_PATH/BabylonstorenTreemix_1_1_1_0.xpi,100.0;1,1,2,0,$PROJECT_PATH/BabylonstorenTreemix_1_2_0_0.xpi,100.0;1,1,2,1,$PROJECT_PATH/BabylonstorenTreemix_1_2_1_0.xpi,100.0;
+
+[options]
+varlist = $<$PROJECT_PATH/$PROJECT_NAME_varlist.var$>
+time step = 0.0416666667
+output time step = hourly
+special_outout_def = $<$PROJECT_PATH/$PROJECT_NAME_special_output_def.ini$>
+simulation start = 2015-02-12
+simulation end = 2015-02-22
+create xno files = 1
+special_output_def = $<$PROJECT_PATH/$PROJECT_NAME_special_output_def.ini$>
+
+[system]
+module_def_file = cfg_system/modules.def
+num_proc = 0
+debug_level = 3
+

@@ -1,0 +1,1659 @@
+==10392== Memcheck, a memory error detector
+==10392== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10392== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==10392== Command: ./expertn_bin --base-dir=/home/hong/expertn50/built --config-file=/home/hong/expertn50/built/cfg/BabylonstorenTreemix/BabylonstorenTreemix.xpn
+==10392== Parent PID: 9238
+==10392== 
+--10392-- 
+--10392-- Valgrind options:
+--10392--    --log-file=valgrind-out.txt
+--10392--    --leak-check=full
+--10392--    --track-origins=yes
+--10392--    --verbose
+--10392-- Contents of /proc/version:
+--10392--   Linux version 5.4.0-42-generic (buildd@lgw01-amd64-038) (gcc version 9.3.0 (Ubuntu 9.3.0-10ubuntu2)) #46-Ubuntu SMP Fri Jul 10 00:24:02 UTC 2020
+--10392-- 
+--10392-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--10392-- Page sizes: currently 4096, max supported 4096
+--10392-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--10392-- Reading syms from /home/hong/expertn50/built/bin/expertn_bin
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--10392--   Considering /usr/lib/x86_64-linux-gnu/ld-2.31.so ..
+--10392--   .. CRC mismatch (computed 387b17ea wanted d28cf5ef)
+--10392--   Considering /lib/x86_64-linux-gnu/ld-2.31.so ..
+--10392--   .. CRC mismatch (computed 387b17ea wanted d28cf5ef)
+--10392--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.31.so ..
+--10392--   .. CRC is valid
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--10392--    object doesn't have a symbol table
+--10392--    object doesn't have a dynamic symbol table
+--10392-- Scheduler: using generic scheduler lock implementation.
+--10392-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==10392== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-10392-by-hong-on-???
+==10392== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-10392-by-hong-on-???
+==10392== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-10392-by-hong-on-???
+==10392== 
+==10392== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==10392== don't want to do, unless you know exactly what you're doing,
+==10392== or are doing some strange experiment):
+==10392==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=10392 ...command...
+==10392== 
+==10392== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==10392==   /path/to/gdb ./expertn_bin
+==10392== and then give GDB the following command
+==10392==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=10392
+==10392== --pid is optional if only one valgrind process is running
+==10392== 
+--10392-- REDIR: 0x4022d80 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9ce2 (???)
+--10392-- REDIR: 0x4022b50 (ld-linux-x86-64.so.2:index) redirected to 0x580c9cfc (???)
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--10392--    object doesn't have a symbol table
+==10392== WARNING: new redirection conflicts with existing -- ignoring it
+--10392--     old: 0x04022d80 (strlen              ) R-> (0000.0) 0x580c9ce2 ???
+--10392--     new: 0x04022d80 (strlen              ) R-> (2007.0) 0x0483f060 strlen
+--10392-- REDIR: 0x401f560 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483ffd0 (strcmp)
+--10392-- REDIR: 0x40232e0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4843a20 (mempcpy)
+--10392-- Reading syms from /home/hong/expertn50/built/bin/libexpertn_class.so
+--10392-- Reading syms from /home/hong/expertn50/built/bin/libexpertn_modul_base.so
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--10392--   Considering /usr/lib/x86_64-linux-gnu/libc-2.31.so ..
+--10392--   .. CRC mismatch (computed a6f43087 wanted 6555436e)
+--10392--   Considering /lib/x86_64-linux-gnu/libc-2.31.so ..
+--10392--   .. CRC mismatch (computed a6f43087 wanted 6555436e)
+--10392--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.31.so ..
+--10392--   .. CRC is valid
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.6400.3
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libnetcdf.so.15
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libm-2.31.so
+--10392--   Considering /usr/lib/x86_64-linux-gnu/libm-2.31.so ..
+--10392--   .. CRC mismatch (computed 327d785f wanted 751f5509)
+--10392--   Considering /lib/x86_64-linux-gnu/libm-2.31.so ..
+--10392--   .. CRC mismatch (computed 327d785f wanted 751f5509)
+--10392--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.31.so ..
+--10392--   .. CRC is valid
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libpcre.so.3.13.3
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+--10392--   Considering /usr/lib/debug/.build-id/77/5cbbfff814456660786780b0b3b40096b4c05e.debug ..
+--10392--   .. build-id is valid
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+--10392--   Considering /usr/lib/x86_64-linux-gnu/libdl-2.31.so ..
+--10392--   .. CRC mismatch (computed 4fd191ca wanted df8dd39a)
+--10392--   Considering /lib/x86_64-linux-gnu/libdl-2.31.so ..
+--10392--   .. CRC mismatch (computed 4fd191ca wanted df8dd39a)
+--10392--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libdl-2.31.so ..
+--10392--   .. CRC is valid
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libhdf5_serial_hl.so.100.1.1
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libhdf5_serial.so.103.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4.6.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libsz.so.2.0.1
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libnghttp2.so.14.19.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libidn2.so.0.3.6
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/librtmp.so.1
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libssh.so.4.8.4
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libpsl.so.5.3.2
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libnettle.so.7.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgnutls.so.30.27.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libldap_r-2.4.so.2.10.12
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/liblber-2.4.so.2.10.12
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libbrotlidec.so.1.0.7
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libaec.so.0.0.10
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libunistring.so.2.1.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libhogweed.so.5.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgmp.so.10.4.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.3.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libtasn1.so.6.6.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libresolv-2.31.so
+--10392--   Considering /usr/lib/x86_64-linux-gnu/libresolv-2.31.so ..
+--10392--   .. CRC mismatch (computed 5c5a0ea5 wanted 7eb6f788)
+--10392--   Considering /lib/x86_64-linux-gnu/libresolv-2.31.so ..
+--10392--   .. CRC mismatch (computed 5c5a0ea5 wanted 7eb6f788)
+--10392--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libresolv-2.31.so ..
+--10392--   .. CRC is valid
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libsasl2.so.2.0.25
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgssapi.so.3.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libbrotlicommon.so.1.0.7
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.8
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libheimntlm.so.0.1.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5.so.26.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libasn1.so.8.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libhcrypto.so.4.1.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libroken.so.18.1.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libwind.so.0.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libheimbase.so.1.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libhx509.so.5.0.0
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libsqlite3.so.0.8.6
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypt.so.1.1.0
+--10392--    object doesn't have a symbol table
+--10392-- REDIR: 0x4af8600 (libc.so.6:memmove) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af7900 (libc.so.6:strncpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8930 (libc.so.6:strcasecmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af7220 (libc.so.6:strcat) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af7960 (libc.so.6:rindex) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af9dd0 (libc.so.6:rawmemchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b14e60 (libc.so.6:wmemchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b149a0 (libc.so.6:wcscmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8760 (libc.so.6:mempcpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8590 (libc.so.6:bcmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af7890 (libc.so.6:strncmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af72d0 (libc.so.6:strcmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af86c0 (libc.so.6:memset) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b14960 (libc.so.6:wcschr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af77f0 (libc.so.6:strnlen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af73b0 (libc.so.6:strcspn) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8980 (libc.so.6:strncasecmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af7350 (libc.so.6:strcpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8ad0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b160d0 (libc.so.6:wcsnlen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b149e0 (libc.so.6:wcscpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af79a0 (libc.so.6:strpbrk) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af7280 (libc.so.6:index) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af77b0 (libc.so.6:strlen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b00d20 (libc.so.6:memrchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af89d0 (libc.so.6:strcasecmp_l) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8550 (libc.so.6:memchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b14ab0 (libc.so.6:wcslen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af7c60 (libc.so.6:strspn) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af88d0 (libc.so.6:stpncpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8870 (libc.so.6:stpcpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af9e10 (libc.so.6:strchrnul) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8a20 (libc.so.6:strncasecmp_l) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b85750 (libc.so.6:__memcpy_chk) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4af8470 (libc.so.6:strstr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--10392-- REDIR: 0x4b85810 (libc.so.6:__memmove_chk) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+==10392== WARNING: new redirection conflicts with existing -- ignoring it
+--10392--     old: 0x04be34d0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04843b10 __memcpy_chk
+--10392--     new: 0x04be34d0 (__memcpy_chk_avx_una) R-> (2024.0) 0x048434d0 __memmove_chk
+--10392-- REDIR: 0x4af7830 (libc.so.6:strncat) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+==10392== WARNING: new redirection conflicts with existing -- ignoring it
+--10392--     old: 0x04be34d0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04843b10 __memcpy_chk
+--10392--     new: 0x04be34d0 (__memcpy_chk_avx_una) R-> (2024.0) 0x048434d0 __memmove_chk
+==10392== WARNING: new redirection conflicts with existing -- ignoring it
+--10392--     old: 0x04be34d0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04843b10 __memcpy_chk
+--10392--     new: 0x04be34d0 (__memcpy_chk_avx_una) R-> (2024.0) 0x048434d0 __memmove_chk
+--10392-- REDIR: 0x4be0300 (libc.so.6:__strrchr_avx2) redirected to 0x483ea10 (rindex)
+--10392-- REDIR: 0x4be04d0 (libc.so.6:__strlen_avx2) redirected to 0x483ef40 (strlen)
+--10392-- REDIR: 0x4bdbe10 (libc.so.6:__strncmp_avx2) redirected to 0x483f670 (strncmp)
+--10392-- REDIR: 0x4bdfee0 (libc.so.6:__strchr_avx2) redirected to 0x483ebf0 (index)
+--10392-- REDIR: 0x4bdb9d0 (libc.so.6:__strcmp_avx2) redirected to 0x483fed0 (strcmp)
+--10392-- REDIR: 0x4af2260 (libc.so.6:malloc) redirected to 0x483b780 (malloc)
+--10392-- REDIR: 0x4be34e0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48429f0 (memmove)
+--10392-- REDIR: 0x4af3c90 (libc.so.6:calloc) redirected to 0x483dce0 (calloc)
+--10392-- REDIR: 0x4be34d0 (libc.so.6:__memcpy_chk_avx_unaligned_erms) redirected to 0x4843b10 (__memcpy_chk)
+--10392-- REDIR: 0x4af2850 (libc.so.6:free) redirected to 0x483c9d0 (free)
+--10392-- REDIR: 0x4be3960 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48428e0 (memset)
+--10392-- REDIR: 0x4af3000 (libc.so.6:realloc) redirected to 0x483df30 (realloc)
+--10392-- REDIR: 0x4be0990 (libc.so.6:__strcat_avx2) redirected to 0x483ec20 (strcat)
+--10392-- REDIR: 0x4bdc330 (libc.so.6:__memchr_avx2) redirected to 0x4840050 (memchr)
+--10392-- REDIR: 0x4be0110 (libc.so.6:__strchrnul_avx2) redirected to 0x4843540 (strchrnul)
+--10392-- REDIR: 0x4be34c0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4843660 (mempcpy)
+--10392-- REDIR: 0x4be2700 (libc.so.6:__stpcpy_avx2) redirected to 0x4842300 (stpcpy)
+--10392-- REDIR: 0x4b13560 (libc.so.6:__strstr_sse2_unaligned) redirected to 0x4843c20 (strstr)
+--10392-- REDIR: 0x4be1da0 (libc.so.6:__strncpy_avx2) redirected to 0x483f230 (strncpy)
+--10392-- REDIR: 0x4af8120 (libc.so.6:__GI_strstr) redirected to 0x4843ca0 (__strstr_sse2)
+--10392-- REDIR: 0x4bdceb4 (libc.so.6:__strcasecmp_l_avx) redirected to 0x483fab0 (strcasecmp_l)
+--10392-- REDIR: 0x4bdb620 (libc.so.6:__strcspn_sse42) redirected to 0x4843e10 (strcspn)
+--10392-- REDIR: 0x4bdb8a0 (libc.so.6:__strspn_sse42) redirected to 0x4843ef0 (strspn)
+--10392-- REDIR: 0x4be1a10 (libc.so.6:__strcpy_avx2) redirected to 0x483f090 (strcpy)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libmpmas_coupling.so
+--10392-- Discarding syms at 0x75554a0-0x755cda2 in /home/hong/expertn50/built/models/libmpmas_coupling.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libgecros.so
+--10392-- Discarding syms at 0x758ad20-0x75a6fa0 in /home/hong/expertn50/built/models/libgecros.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libpollen.so
+--10392-- Discarding syms at 0x7555560-0x755bba4 in /home/hong/expertn50/built/models/libpollen.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libxpn_output.so
+--10392-- Discarding syms at 0x7589640-0x75b0840 in /home/hong/expertn50/built/models/libxpn_output.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libwrfchem_coupling.so
+--10392-- Discarding syms at 0x7587cc0-0x7588649 in /home/hong/expertn50/built/models/libwrfchem_coupling.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libceres.so
+--10392-- Discarding syms at 0x758ab80-0x75a34e5 in /home/hong/expertn50/built/models/libceres.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libwrf_coupling.so
+--10392-- Discarding syms at 0x7589130-0x7592f99 in /home/hong/expertn50/built/models/libwrf_coupling.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libxnoah.so
+--10392-- Discarding syms at 0x7589510-0x759708f in /home/hong/expertn50/built/models/libxnoah.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libtreemix.so
+--10392-- Discarding syms at 0x758abe0-0x75be7fa in /home/hong/expertn50/built/models/libtreemix.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libspass.so
+--10392-- Discarding syms at 0x7589760-0x759c3ab in /home/hong/expertn50/built/models/libspass.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libschaaf.so
+--10392-- Discarding syms at 0x75897e0-0x75936d1 in /home/hong/expertn50/built/models/libschaaf.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libread_wrf_weather.so
+--10392-- Discarding syms at 0x75884d0-0x7589b6f in /home/hong/expertn50/built/models/libread_wrf_weather.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libleachn.so
+--10392-- Discarding syms at 0x758aa40-0x75abd62 in /home/hong/expertn50/built/models/libleachn.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libinterception.so
+--10392-- Discarding syms at 0x75554c0-0x7558937 in /home/hong/expertn50/built/models/libinterception.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libpedotransfer.so
+--10392-- Discarding syms at 0x7554220-0x755543b in /home/hong/expertn50/built/models/libpedotransfer.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libhpm.so
+--10392-- Discarding syms at 0x758abc0-0x75a6c28 in /home/hong/expertn50/built/models/libhpm.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libhydrus.so
+--10392-- Discarding syms at 0x75894e0-0x75979c5 in /home/hong/expertn50/built/models/libhydrus.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libhydraulic_functions.so
+--10392-- Discarding syms at 0x7555290-0x755863b in /home/hong/expertn50/built/models/libhydraulic_functions.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libevapotranspiration_pm.so
+--10392-- Discarding syms at 0x7589780-0x7593629 in /home/hong/expertn50/built/models/libevapotranspiration_pm.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libdepos.so
+--10392-- Discarding syms at 0x75541a0-0x75545e2 in /home/hong/expertn50/built/models/libdepos.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libdaisy.so
+--10392-- Discarding syms at 0x75896a0-0x75916ff in /home/hong/expertn50/built/models/libdaisy.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libcentury_n.so
+--10392-- Discarding syms at 0x75897c0-0x759c67f in /home/hong/expertn50/built/models/libcentury_n.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libbalance.so
+--10392-- Discarding syms at 0x75541a0-0x7556866 in /home/hong/expertn50/built/models/libbalance.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libexpertn_database.so
+--10392-- Discarding syms at 0x758aea0-0x75ba3d8 in /home/hong/expertn50/built/models/libexpertn_database.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libxylemwaterflow.so
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+--10392--    object doesn't have a symbol table
+--10392-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+--10392--    object doesn't have a symbol table
+--10392-- REDIR: 0x4bdcac0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x48421e0 (bcmp)
+--10392-- Discarding syms at 0x7594be0-0x75c7bbf in /home/hong/expertn50/built/models/libxylemwaterflow.so (have_dinfo 1)
+--10392-- Reading syms from /home/hong/expertn50/built/models/libhydraulic_functions.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libpedotransfer.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libexpertn_database.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libschaaf.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libbalance.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libxpn_output.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libdaisy.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libevapotranspiration_pm.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libtreemix.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libhydrus.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libdepos.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libleachn.so
+--10392-- Reading syms from /home/hong/expertn50/built/models/libcentury_n.so
+==10392== Invalid read of size 8
+==10392==    at 0x487E078: xpn_register_var_write_txt_row (xpn_register_var.c:496)
+==10392==    by 0x487E319: xpn_register_var_write_data (xpn_register_var.c:642)
+==10392==    by 0x760A31E: xpn_output_calc_var (xpn_output.c:2335)
+==10392==    by 0x484ECFA: expertnclass_RunModuls (expertnclass.c:384)
+==10392==    by 0x484EA3B: expertnclass_run (expertnclass.c:311)
+==10392==    by 0x10BBA3: main._omp_fn.0 (main.c:462)
+==10392==    by 0x4A258E5: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x10B880: main (main.c:457)
+==10392==  Address 0x6595c60 is 0 bytes after a block of size 48 alloc'd
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4881CC5: xpn_load_climate_xno_file (xpn_register_var.c:2270)
+==10392==    by 0x75BC7F7: expertn_standard_ini_load_climate_ts_file (expertn_standard_ini.c:799)
+==10392==    by 0x75B2FC6: expertn_standard_ini_load (expertn_standard_ini.c:134)
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== Thread 4:
+==10392== Invalid read of size 8
+==10392==    at 0x487E078: xpn_register_var_write_txt_row (xpn_register_var.c:496)
+==10392==    by 0x487E3B9: xpn_register_var_write_data (xpn_register_var.c:655)
+==10392==    by 0x760A31E: xpn_output_calc_var (xpn_output.c:2335)
+==10392==    by 0x484ECFA: expertnclass_RunModuls (expertnclass.c:384)
+==10392==    by 0x484EA3B: expertnclass_run (expertnclass.c:311)
+==10392==    by 0x10BBA3: main._omp_fn.0 (main.c:462)
+==10392==    by 0x4A2D77D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x4F3F608: start_thread (pthread_create.c:477)
+==10392==    by 0x4B77102: clone (clone.S:95)
+==10392==  Address 0x6595c60 is 0 bytes after a block of size 48 alloc'd
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4881CC5: xpn_load_climate_xno_file (xpn_register_var.c:2270)
+==10392==    by 0x75BC7F7: expertn_standard_ini_load_climate_ts_file (expertn_standard_ini.c:799)
+==10392==    by 0x75B2FC6: expertn_standard_ini_load (expertn_standard_ini.c:134)
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== Thread 2:
+==10392== Invalid read of size 8
+==10392==    at 0x487E078: xpn_register_var_write_txt_row (xpn_register_var.c:496)
+==10392==    by 0x487E380: xpn_register_var_write_data (xpn_register_var.c:649)
+==10392==    by 0x760A31E: xpn_output_calc_var (xpn_output.c:2335)
+==10392==    by 0x484ECFA: expertnclass_RunModuls (expertnclass.c:384)
+==10392==    by 0x484EA3B: expertnclass_run (expertnclass.c:311)
+==10392==    by 0x10BBA3: main._omp_fn.0 (main.c:462)
+==10392==    by 0x4A2D77D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x4F3F608: start_thread (pthread_create.c:477)
+==10392==    by 0x4B77102: clone (clone.S:95)
+==10392==  Address 0x6595c60 is 0 bytes after a block of size 48 alloc'd
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4881CC5: xpn_load_climate_xno_file (xpn_register_var.c:2270)
+==10392==    by 0x75BC7F7: expertn_standard_ini_load_climate_ts_file (expertn_standard_ini.c:799)
+==10392==    by 0x75B2FC6: expertn_standard_ini_load (expertn_standard_ini.c:134)
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== Thread 1:
+==10392== Invalid free() / delete / delete[] / realloc()
+==10392==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x76561A5: libtreemix_done (Initialization.c:1252)
+==10392==    by 0x484EDB2: expertnclass_FinalizeModuls (expertnclass.c:399)
+==10392==    by 0x484DF71: expertnclass_finalize (expertnclass.c:54)
+==10392==    by 0x49CCD0D: g_object_unref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x484EA06: expertnclass_done (expertnclass.c:298)
+==10392==    by 0x10B935: main (main.c:484)
+==10392==  Address 0x648b090 is 112 bytes inside a block of size 720 alloc'd
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F88ED: g_slice_alloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49EE0CF: g_type_create_instance (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CD34C: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CEB44: g_object_new_with_properties (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CF6F0: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4850772: expertnclass_loadModuls (expertnclass.c:835)
+==10392==    by 0x484E920: expertnclass_new (expertnclass.c:276)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== Invalid free() / delete / delete[] / realloc()
+==10392==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x76561B7: libtreemix_done (Initialization.c:1253)
+==10392==    by 0x484EDB2: expertnclass_FinalizeModuls (expertnclass.c:399)
+==10392==    by 0x484DF71: expertnclass_finalize (expertnclass.c:54)
+==10392==    by 0x49CCD0D: g_object_unref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x484EA06: expertnclass_done (expertnclass.c:298)
+==10392==    by 0x10B935: main (main.c:484)
+==10392==  Address 0x648b0e0 is 192 bytes inside a block of size 720 alloc'd
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F88ED: g_slice_alloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49EE0CF: g_type_create_instance (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CD34C: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CEB44: g_object_new_with_properties (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CF6F0: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4850772: expertnclass_loadModuls (expertnclass.c:835)
+==10392==    by 0x484E920: expertnclass_new (expertnclass.c:276)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+--10392-- Discarding syms at 0x7634be0-0x76687fa in /home/hong/expertn50/built/models/libtreemix.so (have_dinfo 1)
+--10392-- Discarding syms at 0x7555290-0x755863b in /home/hong/expertn50/built/models/libhydraulic_functions.so (have_dinfo 1)
+--10392-- Discarding syms at 0x7588220-0x758943b in /home/hong/expertn50/built/models/libpedotransfer.so (have_dinfo 1)
+--10392-- Discarding syms at 0x7590ea0-0x75c03d8 in /home/hong/expertn50/built/models/libexpertn_database.so (have_dinfo 1)
+--10392-- Discarding syms at 0x75cc7e0-0x75d66d1 in /home/hong/expertn50/built/models/libschaaf.so (have_dinfo 1)
+--10392-- Discarding syms at 0x75db1a0-0x75dd866 in /home/hong/expertn50/built/models/libbalance.so (have_dinfo 1)
+--10392-- Discarding syms at 0x75e3640-0x760a840 in /home/hong/expertn50/built/models/libxpn_output.so (have_dinfo 1)
+--10392-- Discarding syms at 0x76714e0-0x767f9c5 in /home/hong/expertn50/built/models/libhydrus.so (have_dinfo 1)
+--10392-- Discarding syms at 0x76136a0-0x761b6ff in /home/hong/expertn50/built/models/libdaisy.so (have_dinfo 1)
+--10392-- Discarding syms at 0x755d1a0-0x755d5e2 in /home/hong/expertn50/built/models/libdepos.so (have_dinfo 1)
+--10392-- Discarding syms at 0x7686a40-0x76a7d62 in /home/hong/expertn50/built/models/libleachn.so (have_dinfo 1)
+--10392-- Discarding syms at 0x7622780-0x762c629 in /home/hong/expertn50/built/models/libevapotranspiration_pm.so (have_dinfo 1)
+--10392-- Discarding syms at 0x76af7c0-0x76c267f in /home/hong/expertn50/built/models/libcentury_n.so (have_dinfo 1)
+==10392== 
+==10392== HEAP SUMMARY:
+==10392==     in use at exit: 1,791,182 bytes in 5,288 blocks
+==10392==   total heap usage: 1,169,499 allocs, 1,164,215 frees, 23,892,255,178 bytes allocated
+==10392== 
+==10392== Searching for pointers to 5,287 not-freed blocks
+==10392== Checked 25,710,440 bytes
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 142 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9DBE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8EDE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 143 of 494
+==10392==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD7F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9D37: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8EDE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 144 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9DBE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8F41: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 145 of 494
+==10392==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD7F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9D37: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8F41: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 146 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9DBE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49D2FFF: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C1: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 147 of 494
+==10392==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD7F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9D37: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49D2FFF: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C1: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 148 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9DBE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CDCC3: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C6: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 16 bytes in 1 blocks are possibly lost in loss record 149 of 494
+==10392==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD7F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9D37: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED066: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CDCC3: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C6: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 16 bytes in 4 blocks are definitely lost in loss record 150 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x10B491: main (main.c:344)
+==10392== 
+==10392== 24 bytes in 1 blocks are definitely lost in loss record 155 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487C166: create_string_from_source (xpn_register_modul.c:22)
+==10392==    by 0x487C5C3: register_modul_new (xpn_register_modul.c:121)
+==10392==    by 0x7592F80: ???
+==10392==    by 0x487C8F3: register_modul_load_modul_list (xpn_register_modul.c:206)
+==10392==    by 0x10AB4F: main (main.c:189)
+==10392== 
+==10392== 28 bytes in 1 blocks are definitely lost in loss record 156 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487C166: create_string_from_source (xpn_register_modul.c:22)
+==10392==    by 0x487C5C3: register_modul_new (xpn_register_modul.c:121)
+==10392==    by 0x7588630: ???
+==10392==    by 0x487C8F3: register_modul_load_modul_list (xpn_register_modul.c:206)
+==10392==    by 0x10AB4F: main (main.c:189)
+==10392== 
+==10392== 32 bytes in 4 blocks are definitely lost in loss record 164 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x484E400: expertnclass_new (expertnclass.c:174)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 36 bytes in 1 blocks are definitely lost in loss record 165 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487C166: create_string_from_source (xpn_register_modul.c:22)
+==10392==    by 0x487C5C3: register_modul_new (xpn_register_modul.c:121)
+==10392==    by 0x7594EF5: ???
+==10392==    by 0x487C8F3: register_modul_load_modul_list (xpn_register_modul.c:206)
+==10392==    by 0x10AB4F: main (main.c:189)
+==10392== 
+==10392== 40 bytes in 1 blocks are possibly lost in loss record 193 of 494
+==10392==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD7F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9043: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED2B4: g_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED3A4: g_type_register_static_simple (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x48528FB: xpn_output_netcdf_get_type_once (xpn_output_netcdf.c:31)
+==10392==    by 0x4852883: xpn_output_netcdf_get_type (xpn_output_netcdf.c:31)
+==10392==    by 0x4852BDD: xpn_output_netcdf_new (xpn_output_netcdf.c:169)
+==10392==    by 0x10B677: main (main.c:369)
+==10392== 
+==10392== 48 bytes in 4 blocks are definitely lost in loss record 194 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D3856: g_key_file_get_integer_list (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75D51E1: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 56 bytes in 2 blocks are definitely lost in loss record 196 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487EE9E: get_fullpath_from_relative (xpn_register_var.c:1120)
+==10392==    by 0x7644A7B: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 64 bytes in 8 blocks are definitely lost in loss record 204 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48BC0D3: g_date_new_dmy (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4880505: convert_str_to_gdate (xpn_register_var.c:1700)
+==10392==    by 0x75D5874: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 84 bytes in 4 blocks are definitely lost in loss record 264 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x484E4AD: expertnclass_new (expertnclass.c:195)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 88 bytes in 3 blocks are definitely lost in loss record 265 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487C166: create_string_from_source (xpn_register_modul.c:22)
+==10392==    by 0x487C5C3: register_modul_new (xpn_register_modul.c:121)
+==10392==    by 0x487C65C: register_modul_new_with_libname (xpn_register_modul.c:138)
+==10392==    by 0x487CA15: register_modul_load_modul_list (xpn_register_modul.c:210)
+==10392==    by 0x10AB4F: main (main.c:189)
+==10392== 
+==10392== 96 bytes in 1 blocks are possibly lost in loss record 323 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E90C7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49E926A: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C1FDE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392==    by 0x1FFEFFFF3E: ???
+==10392== 
+==10392== 96 bytes in 1 blocks are possibly lost in loss record 324 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E90C7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49E926A: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED058: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8EDE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 96 bytes in 1 blocks are possibly lost in loss record 325 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E90C7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49E926A: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED058: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8F41: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 96 bytes in 1 blocks are possibly lost in loss record 326 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E90C7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49E926A: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED058: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49D2FFF: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C1: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 96 bytes in 1 blocks are possibly lost in loss record 327 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E90C7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49E926A: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED058: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CDCC3: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C6: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 96 bytes in 12 blocks are definitely lost in loss record 328 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48BC0D3: g_date_new_dmy (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4880505: convert_str_to_gdate (xpn_register_var.c:1700)
+==10392==    by 0x75D55B8: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 96 bytes in 12 blocks are definitely lost in loss record 329 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48BC0D3: g_date_new_dmy (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4880505: convert_str_to_gdate (xpn_register_var.c:1700)
+==10392==    by 0x75D5677: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 108 bytes in 4 blocks are definitely lost in loss record 345 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x484E455: expertnclass_new (expertnclass.c:185)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 112 bytes in 4 blocks are definitely lost in loss record 346 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487EE9E: get_fullpath_from_relative (xpn_register_var.c:1120)
+==10392==    by 0x484F1E3: expertnclass_load_possible_modules (expertnclass.c:505)
+==10392==    by 0x484F32E: expertnclass_load_INI (expertnclass.c:594)
+==10392==    by 0x484E914: expertnclass_new (expertnclass.c:274)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 120 bytes in 8 blocks are definitely lost in loss record 348 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48FA02D: g_strndup (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D0235: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1FC8: g_key_file_get_string_list (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75D4519: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 128 bytes in 4 blocks are definitely lost in loss record 351 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x10B2AA: main (main.c:326)
+==10392== 
+==10392== 132 bytes in 1 blocks are possibly lost in loss record 353 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49EA0D4: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED0E9: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8EDE: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 132 bytes in 1 blocks are possibly lost in loss record 354 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49EA0D4: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED0E9: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C8F41: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20B7: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 148 bytes in 1 blocks are possibly lost in loss record 361 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9EE8: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED0E9: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49D2FFF: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C1: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 148 bytes in 1 blocks are possibly lost in loss record 362 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9EE8: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED0E9: g_type_register_fundamental (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CDCC3: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20C6: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392==    by 0x1FFEFFFF18: ???
+==10392== 
+==10392== 160 bytes in 4 blocks are definitely lost in loss record 363 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75958FD: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 160 bytes in 4 blocks are definitely lost in loss record 364 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595DCB: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 184 bytes in 1 blocks are possibly lost in loss record 366 of 494
+==10392==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD7F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49E9043: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49ED2B4: g_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49D4D12: g_param_type_register_static (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49D77EA: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49C20CB: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4011B89: call_init.part.0 (dl-init.c:72)
+==10392==    by 0x4011C90: call_init (dl-init.c:30)
+==10392==    by 0x4011C90: _dl_init (dl-init.c:119)
+==10392==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10392==    by 0x2: ???
+==10392==    by 0x1FFEFFFF0A: ???
+==10392== 
+==10392== 208 bytes in 4 blocks are definitely lost in loss record 369 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x484E505: expertnclass_new (expertnclass.c:205)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 224 bytes in 4 blocks are definitely lost in loss record 371 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595E05: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 256 (128 direct, 128 indirect) bytes in 4 blocks are definitely lost in loss record 375 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x10B283: main (main.c:325)
+==10392== 
+==10392== 256 bytes in 4 blocks are definitely lost in loss record 376 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x759573F: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 256 bytes in 4 blocks are definitely lost in loss record 377 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7596065: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 284 (40 direct, 244 indirect) bytes in 1 blocks are definitely lost in loss record 379 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D2004: g_key_file_get_string_list (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x485160E: general_config_load_config_file (general_config.c:140)
+==10392==    by 0x10AAF8: main (main.c:179)
+==10392== 
+==10392== 288 bytes in 4 blocks are definitely lost in loss record 380 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75956D4: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 320 bytes in 4 blocks are definitely lost in loss record 382 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595E22: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 352 bytes in 4 blocks are definitely lost in loss record 389 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x759626E: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 368 bytes in 4 blocks are definitely lost in loss record 396 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487EE55: get_fullpath_from_relative (xpn_register_var.c:1114)
+==10392==    by 0x486191D: expertn_modul_base_replace_std_templates_and_get_fullpath_from_relative (expertn_modul_base.c:134)
+==10392==    by 0x75E3DB7: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 400 (64 direct, 336 indirect) bytes in 4 blocks are definitely lost in loss record 401 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1218: g_key_file_get_string (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B0B04: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 400 (64 direct, 336 indirect) bytes in 4 blocks are definitely lost in loss record 402 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1218: g_key_file_get_string (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B0C6E: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 404 (64 direct, 340 indirect) bytes in 4 blocks are definitely lost in loss record 403 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1218: g_key_file_get_string (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B04F0: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 404 (64 direct, 340 indirect) bytes in 4 blocks are definitely lost in loss record 404 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1218: g_key_file_get_string (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B067E: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 404 (64 direct, 340 indirect) bytes in 4 blocks are definitely lost in loss record 405 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1218: g_key_file_get_string (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B080C: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 404 (64 direct, 340 indirect) bytes in 4 blocks are definitely lost in loss record 406 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1218: g_key_file_get_string (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B099A: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 420 (64 direct, 356 indirect) bytes in 4 blocks are definitely lost in loss record 408 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D3B19: g_key_file_get_double (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B1213: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 420 (64 direct, 356 indirect) bytes in 4 blocks are definitely lost in loss record 409 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D3B19: g_key_file_get_double (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B128C: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 424 (64 direct, 360 indirect) bytes in 4 blocks are definitely lost in loss record 410 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D3B19: g_key_file_get_double (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B1050: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 424 (64 direct, 360 indirect) bytes in 4 blocks are definitely lost in loss record 411 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D3B19: g_key_file_get_double (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B10C0: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 424 (64 direct, 360 indirect) bytes in 4 blocks are definitely lost in loss record 412 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D3B19: g_key_file_get_double (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B1130: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 424 (64 direct, 360 indirect) bytes in 4 blocks are definitely lost in loss record 413 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C2FAF: g_error_new_valist (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48C33AE: g_set_error (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1035: g_key_file_get_value (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D3B19: g_key_file_get_double (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x76B11A0: ???
+==10392==    by 0x76AFC9C: ???
+==10392==    by 0x76B3C47: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392== 
+==10392== 476 (208 direct, 268 indirect) bytes in 1 blocks are definitely lost in loss record 414 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D2004: g_key_file_get_string_list (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4851ED6: general_config_load_config_file (general_config.c:198)
+==10392==    by 0x10AAF8: main (main.c:179)
+==10392== 
+==10392== 480 bytes in 4 blocks are definitely lost in loss record 415 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7596209: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 480 bytes in 4 blocks are definitely lost in loss record 416 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7596225: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 544 bytes in 4 blocks are definitely lost in loss record 421 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75961C9: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 576 bytes in 4 blocks are definitely lost in loss record 422 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75956B8: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 593 bytes in 25 blocks are definitely lost in loss record 423 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48FA2D8: g_strconcat (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4851FAB: general_config_load_config_file (general_config.c:206)
+==10392==    by 0x10AAF8: main (main.c:179)
+==10392== 
+==10392== 608 bytes in 4 blocks are definitely lost in loss record 424 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75961E9: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 640 bytes in 4 blocks are definitely lost in loss record 426 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7596242: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 700 bytes in 25 blocks are definitely lost in loss record 428 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x487EE9E: get_fullpath_from_relative (xpn_register_var.c:1120)
+==10392==    by 0x487C80B: register_modul_load_modul_list (xpn_register_modul.c:183)
+==10392==    by 0x10AB4F: main (main.c:189)
+==10392== 
+==10392== 704 bytes in 4 blocks are definitely lost in loss record 429 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595779: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 736 bytes in 4 blocks are definitely lost in loss record 431 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595DE8: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 800 bytes in 4 blocks are definitely lost in loss record 432 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7596082: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 832 bytes in 4 blocks are definitely lost in loss record 433 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595706: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 896 bytes in 4 blocks are definitely lost in loss record 434 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x759600E: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,056 bytes in 4 blocks are definitely lost in loss record 441 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595E9D: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,088 bytes in 4 blocks are definitely lost in loss record 442 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75961A9: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,104 bytes in 3 blocks are possibly lost in loss record 443 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x40149CA: allocate_dtv (dl-tls.c:286)
+==10392==    by 0x40149CA: _dl_allocate_tls (dl-tls.c:532)
+==10392==    by 0x4F40322: allocate_stack (allocatestack.c:622)
+==10392==    by 0x4F40322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+==10392==    by 0x4A2DDDA: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x4A258E0: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x10B880: main (main.c:457)
+==10392== 
+==10392== 1,120 bytes in 4 blocks are definitely lost in loss record 444 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595ED7: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,216 bytes in 4 blocks are definitely lost in loss record 445 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x759602B: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,248 bytes in 4 blocks are definitely lost in loss record 446 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75958C3: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,360 bytes in 4 blocks are definitely lost in loss record 449 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595722: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,376 bytes in 4 blocks are definitely lost in loss record 450 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x759575C: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,644 bytes in 220 blocks are definitely lost in loss record 451 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x484E28F: create_string_from_source (expertnclass.c:121)
+==10392==    by 0x484F7B8: expertnclass_load_INI (expertnclass.c:645)
+==10392==    by 0x484E914: expertnclass_new (expertnclass.c:274)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 1,728 bytes in 4 blocks are definitely lost in loss record 452 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75958A6: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 1,786 bytes in 116 blocks are definitely lost in loss record 453 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D015B: ??? (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48D1251: g_key_file_get_string (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x484F774: expertnclass_load_INI (expertnclass.c:644)
+==10392==    by 0x484E914: expertnclass_new (expertnclass.c:274)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 2,592 bytes in 4 blocks are definitely lost in loss record 459 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595EBA: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 3,316 bytes in 220 blocks are definitely lost in loss record 460 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x484E28F: create_string_from_source (expertnclass.c:121)
+==10392==    by 0x484F800: expertnclass_load_INI (expertnclass.c:646)
+==10392==    by 0x484E914: expertnclass_new (expertnclass.c:274)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 3,584 bytes in 4 blocks are definitely lost in loss record 461 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7596048: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 4,512 bytes in 4 blocks are definitely lost in loss record 464 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75958E0: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 4,512 (3,968 direct, 544 indirect) bytes in 4 blocks are definitely lost in loss record 465 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595E3E: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 4,656 bytes in 248 blocks are definitely lost in loss record 466 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F9F93: g_strdup (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x484FB04: expertnclass_load_INI (expertnclass.c:671)
+==10392==    by 0x484E914: expertnclass_new (expertnclass.c:274)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 10,080 (240 direct, 9,840 indirect) bytes in 1 blocks are definitely lost in loss record 468 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595B69: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 10,416 (248 direct, 10,168 indirect) bytes in 1 blocks are definitely lost in loss record 469 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595F7A: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 14,784 (352 direct, 14,432 indirect) bytes in 1 blocks are definitely lost in loss record 470 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595927: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 17,136 (400 direct, 16,736 indirect) bytes in 2 blocks are definitely lost in loss record 473 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595A1C: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 17,136 (400 direct, 16,736 indirect) bytes in 2 blocks are definitely lost in loss record 474 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595A74: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 17,472 (416 direct, 17,056 indirect) bytes in 4 blocks are definitely lost in loss record 475 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595D4D: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 30,240 (720 direct, 29,520 indirect) bytes in 3 blocks are definitely lost in loss record 476 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595B11: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 31,568 (320 direct, 31,248 indirect) bytes in 4 blocks are definitely lost in loss record 477 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595EF4: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 36,288 (864 direct, 35,424 indirect) bytes in 4 blocks are definitely lost in loss record 480 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595C06: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 37,632 (896 direct, 36,736 indirect) bytes in 4 blocks are definitely lost in loss record 482 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75960BB: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 44,352 (1,056 direct, 43,296 indirect) bytes in 3 blocks are definitely lost in loss record 485 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x759597F: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 69,216 (1,648 direct, 67,568 indirect) bytes in 1 blocks are definitely lost in loss record 487 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75957C0: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 79,840 (160 direct, 79,680 indirect) bytes in 1 blocks are definitely lost in loss record 489 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x75D5B6A: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 207,648 (4,944 direct, 202,704 indirect) bytes in 3 blocks are definitely lost in loss record 490 of 494
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x7595817: ???
+==10392==    by 0x75B2FF2: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 268,300 (26,688 direct, 241,612 indirect) bytes in 58 blocks are definitely lost in loss record 492 of 494
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F88ED: g_slice_alloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49EE0CF: g_type_create_instance (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CD34C: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CEB44: g_object_new_with_properties (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CF6F0: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4850772: expertnclass_loadModuls (expertnclass.c:835)
+==10392==    by 0x484E920: expertnclass_new (expertnclass.c:276)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 708,672 bytes in 4 blocks are definitely lost in loss record 494 of 494
+==10392==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD7F: g_realloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4882609: xpn_load_climate_xno_file (xpn_register_var.c:2409)
+==10392==    by 0x75BC7F7: ???
+==10392==    by 0x75B2FC6: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== LEAK SUMMARY:
+==10392==    definitely lost: 797,735 bytes in 1,212 blocks
+==10392==    indirectly lost: 858,124 bytes in 3,593 blocks
+==10392==      possibly lost: 2,496 bytes in 22 blocks
+==10392==    still reachable: 132,747 bytes in 460 blocks
+==10392==                       of which reachable via heuristic:
+==10392==                         newarray           : 1,536 bytes in 16 blocks
+==10392==         suppressed: 0 bytes in 0 blocks
+==10392== Reachable blocks (those to which a pointer was found) are not shown.
+==10392== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==10392== 
+==10392== ERROR SUMMARY: 349 errors from 111 contexts (suppressed: 0 from 0)
+==10392== 
+==10392== 1 errors in context 1 of 111:
+==10392== Thread 2:
+==10392== Invalid read of size 8
+==10392==    at 0x487E078: xpn_register_var_write_txt_row (xpn_register_var.c:496)
+==10392==    by 0x487E380: xpn_register_var_write_data (xpn_register_var.c:649)
+==10392==    by 0x760A31E: ???
+==10392==    by 0x484ECFA: expertnclass_RunModuls (expertnclass.c:384)
+==10392==    by 0x484EA3B: expertnclass_run (expertnclass.c:311)
+==10392==    by 0x10BBA3: main._omp_fn.0 (main.c:462)
+==10392==    by 0x4A2D77D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x4F3F608: start_thread (pthread_create.c:477)
+==10392==    by 0x4B77102: clone (clone.S:95)
+==10392==  Address 0x6595c60 is 0 bytes after a block of size 48 alloc'd
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4881CC5: xpn_load_climate_xno_file (xpn_register_var.c:2270)
+==10392==    by 0x75BC7F7: ???
+==10392==    by 0x75B2FC6: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 
+==10392== 1 errors in context 2 of 111:
+==10392== Thread 1:
+==10392== Invalid read of size 8
+==10392==    at 0x487E078: xpn_register_var_write_txt_row (xpn_register_var.c:496)
+==10392==    by 0x487E319: xpn_register_var_write_data (xpn_register_var.c:642)
+==10392==    by 0x760A31E: ???
+==10392==    by 0x484ECFA: expertnclass_RunModuls (expertnclass.c:384)
+==10392==    by 0x484EA3B: expertnclass_run (expertnclass.c:311)
+==10392==    by 0x10BBA3: main._omp_fn.0 (main.c:462)
+==10392==    by 0x4A258E5: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x10B880: main (main.c:457)
+==10392==  Address 0x6595c60 is 0 bytes after a block of size 48 alloc'd
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4881CC5: xpn_load_climate_xno_file (xpn_register_var.c:2270)
+==10392==    by 0x75BC7F7: ???
+==10392==    by 0x75B2FC6: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== 
+==10392== 2 errors in context 3 of 111:
+==10392== Invalid free() / delete / delete[] / realloc()
+==10392==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x76561B7: ???
+==10392==    by 0x484EDB2: expertnclass_FinalizeModuls (expertnclass.c:399)
+==10392==    by 0x484DF71: expertnclass_finalize (expertnclass.c:54)
+==10392==    by 0x49CCD0D: g_object_unref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x484EA06: expertnclass_done (expertnclass.c:298)
+==10392==    by 0x10B935: main (main.c:484)
+==10392==  Address 0x648b0e0 is 192 bytes inside a block of size 720 alloc'd
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F88ED: g_slice_alloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49EE0CF: g_type_create_instance (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CD34C: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CEB44: g_object_new_with_properties (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CF6F0: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4850772: expertnclass_loadModuls (expertnclass.c:835)
+==10392==    by 0x484E920: expertnclass_new (expertnclass.c:276)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 
+==10392== 2 errors in context 4 of 111:
+==10392== Invalid free() / delete / delete[] / realloc()
+==10392==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x76561A5: ???
+==10392==    by 0x484EDB2: expertnclass_FinalizeModuls (expertnclass.c:399)
+==10392==    by 0x484DF71: expertnclass_finalize (expertnclass.c:54)
+==10392==    by 0x49CCD0D: g_object_unref (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x484EA06: expertnclass_done (expertnclass.c:298)
+==10392==    by 0x10B935: main (main.c:484)
+==10392==  Address 0x648b090 is 112 bytes inside a block of size 720 alloc'd
+==10392==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFCD8: g_malloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F82C5: g_slice_alloc (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x48F88ED: g_slice_alloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x49EE0CF: g_type_create_instance (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CD34C: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CEB44: g_object_new_with_properties (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x49CF6F0: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.3)
+==10392==    by 0x4850772: expertnclass_loadModuls (expertnclass.c:835)
+==10392==    by 0x484E920: expertnclass_new (expertnclass.c:276)
+==10392==    by 0x10B103: main (main.c:282)
+==10392== 
+==10392== 
+==10392== 237 errors in context 5 of 111:
+==10392== Thread 4:
+==10392== Invalid read of size 8
+==10392==    at 0x487E078: xpn_register_var_write_txt_row (xpn_register_var.c:496)
+==10392==    by 0x487E3B9: xpn_register_var_write_data (xpn_register_var.c:655)
+==10392==    by 0x760A31E: ???
+==10392==    by 0x484ECFA: expertnclass_RunModuls (expertnclass.c:384)
+==10392==    by 0x484EA3B: expertnclass_run (expertnclass.c:311)
+==10392==    by 0x10BBA3: main._omp_fn.0 (main.c:462)
+==10392==    by 0x4A2D77D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==10392==    by 0x4F3F608: start_thread (pthread_create.c:477)
+==10392==    by 0x4B77102: clone (clone.S:95)
+==10392==  Address 0x6595c60 is 0 bytes after a block of size 48 alloc'd
+==10392==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10392==    by 0x48DFD30: g_malloc0 (in /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.6400.3)
+==10392==    by 0x4881CC5: xpn_load_climate_xno_file (xpn_register_var.c:2270)
+==10392==    by 0x75BC7F7: ???
+==10392==    by 0x75B2FC6: ???
+==10392==    by 0x484EB02: expertnclass_InitModuls (expertnclass.c:338)
+==10392==    by 0x484E947: expertnclass_initialize (expertnclass.c:283)
+==10392==    by 0x10B6BD: main (main.c:422)
+==10392== 
+==10392== ERROR SUMMARY: 349 errors from 111 contexts (suppressed: 0 from 0)

@@ -1,0 +1,118 @@
+# project  configured on Tue Nov 24 21:31:32 2020 by
+# waf 1.7.9 (abi 98, python 20703f0 on linux2)
+# using ./waf configure --without_database --max_optimize --USE_OPENMP --debug codelite
+#
+----------------------------------------
+Setting top to
+/home/hong/expertn50/dev
+----------------------------------------
+Setting out to
+/home/hong/expertn50/dev/build
+----------------------------------------
+Checking for 'g++' (c++ compiler)
+find program=['g++', 'c++'] paths=['/home/hong/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/hong/expertn50/built/bin', '/home/hong/expertn50/expertn_tools', '/home/hong/expertn50/built/bin', '/usr/lib', '/usr/share'] var='CXX' -> '/usr/bin/g++'
+find program=['ar'] paths=['/home/hong/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/hong/expertn50/built/bin', '/home/hong/expertn50/expertn_tools', '/home/hong/expertn50/built/bin', '/usr/lib', '/usr/share'] var='AR' -> '/usr/bin/ar'
+/usr/bin/g++
+----------------------------------------
+Checking for 'gcc' (c compiler)
+find program=['gcc', 'cc'] paths=['/home/hong/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/hong/expertn50/built/bin', '/home/hong/expertn50/expertn_tools', '/home/hong/expertn50/built/bin', '/usr/lib', '/usr/share'] var='CC' -> '/usr/bin/gcc'
+(tool ar is already loaded, skipping)
+/usr/bin/gcc
+----------------------------------------
+Checking for program pkg-config
+/usr/bin/pkg-config
+find program=['pkg-config'] paths=['/home/hong/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/hong/expertn50/built/bin', '/home/hong/expertn50/expertn_tools', '/home/hong/expertn50/built/bin', '/usr/lib', '/usr/share'] var='PKGCONFIG' -> '/usr/bin/pkg-config'
+----------------------------------------
+Checking for 'glib-2.0' >= 2.22.5
+['/usr/bin/pkg-config', '--atleast-version=2.22.5', 'glib-2.0']
+['/usr/bin/pkg-config', '--cflags', '--libs', 'glib-2.0']
+out: -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -lglib-2.0
+
+yes
+----------------------------------------
+Checking for 'gobject-2.0' >= 2.22.5
+['/usr/bin/pkg-config', '--atleast-version=2.22.5', 'gobject-2.0']
+['/usr/bin/pkg-config', '--cflags', '--libs', 'gobject-2.0']
+out: -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -lgobject-2.0 -lglib-2.0
+
+yes
+----------------------------------------
+Checking for 'gmodule-2.0'
+['/usr/bin/pkg-config', '--cflags', '--libs', 'gmodule-2.0']
+out: -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0
+
+yes
+----------------------------------------
+Checking for 'gmodule-2.0'
+['/usr/bin/pkg-config', '--cflags', '--libs', 'gmodule-2.0']
+out: -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0
+
+yes
+----------------------------------------
+Checking for 'libxml-2.0'
+['/usr/bin/pkg-config', '--cflags', '--libs', 'libxml-2.0']
+out: -I/usr/include/libxml2 -lxml2
+
+yes
+----------------------------------------
+Checking for library m
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] [32mc: build/.conf_check_7a840b604b19cb962c69209e28232766/test.c -> build/.conf_check_7a840b604b19cb962c69209e28232766/testbuild/test.c.1.o
+[0m
+['/usr/bin/gcc', '-Wall', '-DHAVE_GLIB=1', '-DHAVE_GOBJECT=1', '-DHAVE_GMODULE=1', '-DHAVE_LIBXML2=1', '-DXPN_WITHOUT_DATABASE=1', '../test.c', '-c', '-o', 'test.c.1.o']
+[2/2] [33mcprogram: build/.conf_check_7a840b604b19cb962c69209e28232766/testbuild/test.c.1.o -> build/.conf_check_7a840b604b19cb962c69209e28232766/testbuild/testprog
+[0m
+['/usr/bin/gcc', 'test.c.1.o', '-o', '/home/hong/expertn50/dev/build/.conf_check_7a840b604b19cb962c69209e28232766/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
+yes
+----------------------------------------
+Checking for MS Windows
+False
+----------------------------------------
+Checking Expert-N Version
+5.0 Rev 0
+----------------------------------------
+Flag debug:
+True
+----------------------------------------
+Flag max_optimize
+False
+----------------------------------------
+Flag USE_OPENMP
+True
+----------------------------------------
+Checking for openmp flag -fopenmp
+==>
+#include <omp.h>
+                        int main(int argc, char **argv){
+                        int i;
+                        #pragma omp parallel for
+                        for (i=0;i<5;i++)
+                        {}
+                        return omp_get_thread_num();};
+<==
+[1/2] [32mc: build/.conf_check_99781beb93c9bd7d800ecd88b7922a43/test.c -> build/.conf_check_99781beb93c9bd7d800ecd88b7922a43/testbuild/test.c.1.o
+[0m
+['/usr/bin/gcc', '-Wall', '-fPIC', '-g', '-O0', '-fopenmp', '-DHAVE_GLIB=1', '-DHAVE_GOBJECT=1', '-DHAVE_GMODULE=1', '-DHAVE_LIBXML2=1', '-DXPN_WITHOUT_DATABASE=1', '-DXPN_VERSION="5.0 Rev 0"', '-DXPN_DEBUG=1', '-DUSE_OPENMP=1', '../test.c', '-c', '-o', 'test.c.1.o']
+[2/2] [33mcprogram: build/.conf_check_99781beb93c9bd7d800ecd88b7922a43/testbuild/test.c.1.o -> build/.conf_check_99781beb93c9bd7d800ecd88b7922a43/testbuild/testprog
+[0m
+['/usr/bin/gcc', '-fopenmp', 'test.c.1.o', '-o', '/home/hong/expertn50/dev/build/.conf_check_99781beb93c9bd7d800ecd88b7922a43/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+yes
+----------------------------------------
+Flag USE_MPI
+False
+----------------------------------------
+Checking for 'netcdf'
+['/usr/bin/pkg-config', '--cflags', '--libs', 'netcdf']
+out: -I/usr/include/hdf5/serial -lnetcdf
+
+yes
+----------------------------------------
+Installation Prefix
+/home/hong/expertn50/built
